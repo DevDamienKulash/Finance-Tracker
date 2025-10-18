@@ -26,16 +26,19 @@ A minimalist, responsive finance tracker that lets you record income and expense
 
 > Add project screenshots here (Dashboard + Transactions + Edit modal).
 > Example filenames:
+>
 > - `docs/screenshot-dashboard.png`
 > - `docs/screenshot-transactions.png`
 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ (LTS recommended)
 - npm 9+ (or pnpm/yarn)
 
 ### Install
+
 ```bash
 npm install
 
@@ -50,51 +53,50 @@ npm run build
 npm run preview
 ```
 
-
 Project Structure
 src/
-  app/
-    store.ts(x)         # Context + reducer, persistence effect
-    storage.ts          # localStorage helpers + zod schema
-    settings.ts         # Starting balance persistence
-  components/
-    AppShell.tsx        # Layout shell (sidebar + header)
-    Sidebar.tsx
-    HeaderBar.tsx
-    MonthPicker.tsx
-    Modal.tsx
-    EditTransactionModal.tsx
-    AccountTotal.tsx
-    CategoryChart.tsx
-    InflowIncomeChart.tsx
-    TransactionsFilters.tsx
-  lib/
-    filters.ts          # TxFilters type, load/save/apply
-    selectors.ts        # Totals, category sums, 12-month series
-    validation.ts       # zod schema for tx input
-    balance.ts          # starting balance + delta as of date
-    format.ts           # currency formatting
-  pages/
-    Dashboard.tsx
-    Transactions.tsx
-  types.ts              # Transaction, TxType, etc.
-  index.css             # Tailwind + small token layer
-  main.tsx              # App bootstrap
-  App.tsx               # Tabs + shell wiring
+app/
+store.ts(x) # Context + reducer, persistence effect
+storage.ts # localStorage helpers + zod schema
+settings.ts # Starting balance persistence
+components/
+AppShell.tsx # Layout shell (sidebar + header)
+Sidebar.tsx
+HeaderBar.tsx
+MonthPicker.tsx
+Modal.tsx
+EditTransactionModal.tsx
+AccountTotal.tsx
+CategoryChart.tsx
+InflowIncomeChart.tsx
+TransactionsFilters.tsx
+lib/
+filters.ts # TxFilters type, load/save/apply
+selectors.ts # Totals, category sums, 12-month series
+validation.ts # zod schema for tx input
+balance.ts # starting balance + delta as of date
+format.ts # currency formatting
+pages/
+Dashboard.tsx
+Transactions.tsx
+types.ts # Transaction, TxType, etc.
+index.css # Tailwind + small token layer
+main.tsx # App bootstrap
+App.tsx # Tabs + shell wiring
 
 Data Model
 // types.ts
 export type TxType = 'income' | 'expense';
 
 export type Transaction = {
-  id: string;
-  date: string;         // 'YYYY-MM-DD'
-  amount: number;       // positive
-  type: TxType;
-  category: string;
-  note?: string;
-  createdAt: string;
-  updatedAt: string;
+id: string;
+date: string; // 'YYYY-MM-DD'
+amount: number; // positive
+type: TxType;
+category: string;
+note?: string;
+createdAt: string;
+updatedAt: string;
 };
 
 Notable Implementation Details
@@ -130,8 +132,8 @@ Development Notes
 If Tailwind utilities fail to compile after config changes, clear Vite cache:
 
 # Windows PowerShell
+
 Remove-Item -Recurse -Force node_modules\.vite -ErrorAction SilentlyContinue
 npm run dev
-
 
 This project uses Tailwind via @tailwindcss/postcss in vite.config.ts and postcss.config.js.

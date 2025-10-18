@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+html, body, #root { height: 100%; }
+body {
+  @apply font-sans antialiased text-gray-900;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(138,184,127,0.15), transparent 60%),
+    radial-gradient(1000px 500px at -10% 110%, rgba(207,225,200,0.4), transparent 60%),
+    #525252;
+}
+
+@layer components {
+  /* use built-in shadow so we don't depend on config extension */
+  .card    { @apply bg-white border rounded-2xl shadow-lg; }
+  .section { @apply bg-white border rounded-2xl shadow-lg p-5; }
+
+  .btn {
+    /* swap brand ring -> built-in emerald ring */
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-medium
+           transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-300;
+  }
+  .btn-primary { @apply bg-emerald-600 text-white hover:bg-emerald-700; }
+  .btn-danger  { @apply bg-rose-600 text-white hover:bg-rose-700; }
+  .btn-ghost   { @apply border bg-white hover:bg-gray-50; }
+
+  .badge { @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs; }
+  .badge-income  { @apply bg-emerald-100 text-emerald-700; }
+  .badge-expense { @apply bg-rose-100 text-rose-700; }
+}
+
+:focus-visible { outline: 2px solid rgb(16 185 129 / 0.5); outline-offset: 2px; } /* emerald-ish */
