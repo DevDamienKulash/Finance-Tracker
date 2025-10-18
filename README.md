@@ -22,14 +22,6 @@ A minimalist, responsive finance tracker that lets you record income and expense
 - **State:** React Context + Reducer + typed selectors
 - **Persistence:** `localStorage`
 
-## Screenshots
-
-> Add project screenshots here (Dashboard + Transactions + Edit modal).
-> Example filenames:
->
-> - `docs/screenshot-dashboard.png`
-> - `docs/screenshot-transactions.png`
-
 ## Getting Started
 
 ### Prerequisites
